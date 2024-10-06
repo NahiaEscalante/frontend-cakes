@@ -1,0 +1,114 @@
+import React from 'react';
+import Slider from "react-slick";  // Importa Slider de react-slick
+import "slick-carousel/slick/slick.css";  // Importa el CSS de slick-carousel
+import "slick-carousel/slick/slick-theme.css";  // Importa el tema de slick-carousel
+import { Link } from 'react-router-dom';  // Importa Link de react-router-dom para la navegación
+import '../styles/index.css';  // Tus propios estilos
+
+const ProductosRelacionados = () => {
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+        }
+      }
+    ]
+  };
+
+  return (
+    <div className="related-products">
+      <h2>PRODUCTOS RELACIONADOS</h2>
+      <Slider {...settings}>
+
+        <div className="related-product">
+          <Link to="/producto/torta">
+            <img src="/src/img/torta.png" alt="Torta" className="product-image" />
+            <p>TORTA LA CÁBALA</p>
+          </Link>
+        </div>
+        <div className="related-product">
+          <Link to="/producto/cheesecake">
+            <img src="/src/img/cheesecake.png" alt="Florencia" className="product-image" />
+            <p>CHEESECAKE DE FRESA</p>
+          </Link>
+        </div>
+
+        <div className="related-product">
+          <Link to="/producto/cheesecake">
+            <img src="/src/img/maracuyacheesecake.png" alt="Cheesecake" className="product-image" />
+            <p>CHEESECAKE DE MARACUYÁ</p>
+          </Link>
+        </div>
+
+        <div className="related-product">
+          <Link to="/producto/galleta">
+            <img src="/src/img/galleta.png" alt="Cheesecake" className="product-image" />
+            <p>GALLETA</p>
+          </Link>
+        </div>
+
+        <div className="related-product">
+          <Link to="/producto/torta">
+            <img src="/src/img/torta.png" alt="Chocovainilla" className="product-image" />
+            <p>CHOCOVAINILLA</p>
+          </Link>
+        </div>
+      </Slider>
+
+      <footer>
+        <div className="footer-info">
+          <div className="pages">
+            <h4>PÁGINAS</h4>
+            <ul>
+              <li><a href="#shop">Shop</a></li>
+              <li><a href="#stores">Tiendas</a></li>
+            </ul>
+          </div>
+          <div className="sienna">
+            <h4>SIENNA</h4>
+            <ul>
+              <li><a href="/home">Inicio</a></li>
+              <li><a href="/home">DOLCE</a></li>
+            </ul>
+          </div>
+          <div className="information">
+            <h4>INFORMACIÓN</h4>
+            <ul>
+              <li><a href="#envios">Envíos y Devolución</a></li>
+              <li><a href="#terms">Términos y Condiciones</a></li>
+              <li><a href="#privacy">Política de Privacidad</a></li>
+            </ul>
+          </div>
+          <div className="social">
+            <h4>SÍGUENOS</h4>
+            <ul>
+              <li><a href="#facebook">Facebook</a></li>
+              <li><a href="#instagram">Instagram</a></li>
+            </ul>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+};
+
+export default ProductosRelacionados;
