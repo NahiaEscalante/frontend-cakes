@@ -41,10 +41,11 @@ const ProductosRelacionados = () => {
 
         <div className="related-product">
           <Link to="/producto/torta">
-            <img src="/src/img/torta.png" alt="Torta" className="product-image" />
+            <img src="/src/img/torta1.png" alt="Torta" className="product-image" />
             <p>TORTA LA CÁBALA</p>
           </Link>
         </div>
+        
         <div className="related-product">
           <Link to="/producto/cheesecake">
             <img src="/src/img/cheesecake.png" alt="Florencia" className="product-image" />
@@ -63,7 +64,7 @@ const ProductosRelacionados = () => {
         <div className="related-product">
           <Link to="/producto/torta">
             <img src="/src/img/torta.png" alt="Chocovainilla" className="product-image" />
-            <p>CHOCOVAINILLA</p>
+            <p>TORTA DE CHOCOLATE</p>
           </Link>
         </div>
       </Slider>
