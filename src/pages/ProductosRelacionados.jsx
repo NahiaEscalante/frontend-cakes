@@ -36,7 +36,7 @@ const ProductosRelacionados = () => {
 
   return (
     <div className="related-products">
-      <h2>PRODUCTOS RELACIONADOS</h2>
+      <h2>Más productos</h2>
       <Slider {...settings}>
 
         <div className="related-product">
@@ -52,12 +52,6 @@ const ProductosRelacionados = () => {
           </Link>
         </div>
 
-        <div className="related-product">
-          <Link to="/producto/cheesecake">
-            <img src="/src/img/maracuyacheesecake.png" alt="Cheesecake" className="product-image" />
-            <p>CHEESECAKE DE MARACUYÁ</p>
-          </Link>
-        </div>
 
         <div className="related-product">
           <Link to="/producto/galleta">
@@ -76,15 +70,9 @@ const ProductosRelacionados = () => {
 
       <footer>
         <div className="footer-info">
-          <div className="pages">
-            <h4>PÁGINAS</h4>
-            <ul>
-              <li><a href="#shop">Shop</a></li>
-              <li><a href="#stores">Tiendas</a></li>
-            </ul>
-          </div>
+          <div className="pages"></div>
           <div className="sienna">
-            <h4>SIENNA</h4>
+            <h4>DOLCE</h4>
             <ul>
               <li><a href="/home">Inicio</a></li>
               <li><a href="/home">DOLCE</a></li>
@@ -106,6 +94,7 @@ const ProductosRelacionados = () => {
             </ul>
           </div>
         </div>
+        <p className="footer-text">© 2024 Dolce Bakery. Todos los derechos reservados.</p>
       </footer>
     </div>
   );

@@ -1,38 +1,32 @@
-import React, { useContext, useState } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-// import { CartContext } from '../context/CartContext'; // Importar el contexto del carrito
-// import CartModal from '../pages/CartModal'
+import CarritoModal from '../pages/CarritoModal';
+import cartIcon from '../img/cart-icon.png';  // Asegúrate de que la ruta sea correcta
+
 const Navbar = () => {
-  // const { cartItems } = useContext(CartContext); // Acceder al carrito desde el contexto
-  // const [isModalOpen, setIsModalOpen] = useState(false); // Estado para abrir y cerrar el modal
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
-  // // Calcular la cantidad total de productos en el carrito
-  // const totalItems = cartItems.reduce((acc, item) => acc + item.quantity, 0);
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
 
-  // const openModal = () => setIsModalOpen(true);
-  // const closeModal = () => setIsModalOpen(false);
+  const cartItems = []; // O los productos que tengas en el carrito
 
   return (
-    <header>
+    <header className="navbar">
       <div className="logo">
         <h1>DOLCE BAKERY</h1>
       </div>
       <nav>
-        <ul>
+        <ul className="nav-links">
           <li><Link to="/home">Home</Link></li>
           <li><Link to="/home">Dolce</Link></li>
-          Carrito
-          <li>
-            {/* Botón para abrir el modal del carrito */}
-            {/* <button onClick={openModal} className="cart-btn">
-              Carrito ({totalItems})
-            </button> */}
-          </li>
         </ul>
+        <button onClick={openModal} className="cart-btn">
+          <img src={cartIcon} alt="Carrito" className="cart-icon" />
+        </button>
       </nav>
 
-      {/* Modal del carrito */}
-      {/* <CartModal isOpen={isModalOpen} onClose={closeModal} cartItems={cartItems} /> */}
+      <CarritoModal isOpen={isModalOpen} onClose={closeModal} cartItems={cartItems} />
     </header>
   );
 };

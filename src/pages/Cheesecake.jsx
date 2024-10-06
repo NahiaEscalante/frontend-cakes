@@ -5,7 +5,7 @@ import Slider from 'react-slick';  // Slider si usas react-slick para el carruse
 
 const Cheesecake = () => {
   const [quantity, setQuantity] = useState(1);
-  const [selectedImage, setSelectedImage] = useState("/src/img/maracuyacheesecake.png");
+  const [selectedImage, setSelectedImage] = useState("/src/img/cheesecake.png");
 
   const handleQuantityChange = (e) => {
     setQuantity(e.target.value);
@@ -22,9 +22,9 @@ const Cheesecake = () => {
           <div className="thumbnails">
             {/* Las miniaturas que cambian la imagen principal al hacer clic */}
             <img 
-              src="/src/img/maracuyacheesecake.png" 
+              src="/src/img/fresa2.png" 
               alt="Cheesecake de maracuyá" 
-              onClick={() => handleImageClick("/src/img/cheesecake.png")} 
+              onClick={() => handleImageClick("/src/img/fresa2.png")} 
             />
             <img 
               src="/src/img/cheesecake.png" 
@@ -37,9 +37,9 @@ const Cheesecake = () => {
               onClick={() => handleImageClick("/src/img/fresacheesecake.png")} 
             />
             <img 
-              src="/src/img/torta.png" 
+              src="/src/img/fresa1.png" 
               alt="Torta" 
-              onClick={() => handleImageClick("/src/img/fresacheesecake.png")} 
+              onClick={() => handleImageClick("/src/img/fresa1.png")} 
             />
           </div>
           
@@ -50,10 +50,11 @@ const Cheesecake = () => {
         </section>
 
         <section className="product-details">
-          <h1>Cheesecake</h1>
+          <h1>Cheesecake de fresa</h1>
           <p>Descripción:</p>
-          <p>S/85.00 – S/160.00</p>
-          <p>Categoría:</p>
+          <p>Nuestro cheesecake de fresa es una delicia suave y cremosa que combina lo mejor de la repostería artesanal. Hecho con los ingredientes más frescos, cada bocado es una experiencia única. La base crujiente de galleta y mantequilla complementa a la perfección el relleno de queso, creando una textura irresistible. Ideal para cualquier ocasión, este cheesecake es la opción perfecta para sorprender a tus invitados o darte un gusto especial.</p>
+          <p>Precio: S/60.00 </p>
+          <p>Categoría: Cheesecake</p>
 
 
           <div className="quantity-control">
@@ -72,7 +73,9 @@ const Cheesecake = () => {
       </main>
       <ProductosRelacionados />
     </div>
+
   );
 };
+//a
 
 export default Cheesecake;

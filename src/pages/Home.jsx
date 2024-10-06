@@ -18,12 +18,13 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="product">
+       {/* Título Productos */}
+       <div className="productos-title">
         <h2>Productos</h2>
-      </section>
+      </div>
 
       {/* Productos */}
-      <section className="products">
+      <section className="productos">
         <div className="product">
           <img src={torta} alt="Torta" className="torta-image" />
           <Link to="/producto/torta">
@@ -53,18 +54,13 @@ const Home = () => {
         </div>
       </section>
 
+
       {/* Footer */}
       <footer>
         <div className="footer-info">
-          <div className="pages">
-            <h4>PÁGINAS</h4>
-            <ul>
-              <li><a href="#shop">Shop</a></li>
-              <li><a href="#stores">Tiendas</a></li>
-            </ul>
-          </div>
+          <div className="pages"></div>
           <div className="sienna">
-            <h4>SIENNA</h4>
+            <h4>DOLCE</h4>
             <ul>
               <li><a href="/home">Inicio</a></li>
               <li><a href="/home">DOLCE</a></li>
@@ -86,8 +82,9 @@ const Home = () => {
             </ul>
           </div>
         </div>
+        <p className="footer-text">© 2024 Dolce Bakery. Todos los derechos reservados.</p>
       </footer>
-    </div>
+      </div>
   );
 };
 
