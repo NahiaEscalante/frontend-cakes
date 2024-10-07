@@ -1,9 +1,9 @@
 import React from 'react';
-import Slider from "react-slick";  // Importa Slider de react-slick
-import "slick-carousel/slick/slick.css";  // Importa el CSS de slick-carousel
-import "slick-carousel/slick/slick-theme.css";  // Importa el tema de slick-carousel
-import { Link } from 'react-router-dom';  // Importa Link de react-router-dom para la navegación
-import '../styles/index.css';  // Tus propios estilos
+import Slider from "react-slick"; 
+import "slick-carousel/slick/slick.css";  
+import "slick-carousel/slick/slick-theme.css"; 
+import { Link } from 'react-router-dom';  
+import '../styles/index.css';  
 
 const ProductosRelacionados = () => {
   const settings = {

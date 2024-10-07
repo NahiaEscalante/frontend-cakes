@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import CarritoModal from '../pages/CarritoModal';
-import cartIcon from '../img/cart-icon.png';  // Asegúrate de que la ruta sea correcta
+import cartIcon from '../img/cart-icon.png';  
 
 const Navbar = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -9,7 +9,7 @@ const Navbar = () => {
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
 
-  const cartItems = []; // O los productos que tengas en el carrito
+  const cartItems = []; 
 
   return (
     <header className="navbar">
@@ -18,12 +18,14 @@ const Navbar = () => {
       </div>
       <nav>
         <ul className="nav-links">
-          <li><Link to="/home">Home</Link></li>
-          <li><Link to="/home">Dolce</Link></li>
+          
+            <li><Link to="/home">Home</Link></li>
+            <li><Link to="/home">Dolce</Link></li>
+          
         </ul>
         <button onClick={openModal} className="cart-btn">
-          <img src={cartIcon} alt="Carrito" className="cart-icon" />
-        </button>
+            <img src={cartIcon} alt="Carrito" className="cart-icon" />
+          </button>
       </nav>
 
       <CarritoModal isOpen={isModalOpen} onClose={closeModal} cartItems={cartItems} />

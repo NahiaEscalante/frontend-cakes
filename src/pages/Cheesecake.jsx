@@ -1,18 +1,38 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react'; // Importa useContext
 import '../styles/index.css';
-import ProductosRelacionados from './ProductosRelacionados';  // Asegúrate de que la ruta es correcta
-import Slider from 'react-slick';  // Slider si usas react-slick para el carrusel
+import { CartContext } from '../context/CartContext'; // Importa CartContext
+import ProductosRelacionados from './ProductosRelacionados';  
+import Review from './Review';
 
 const Cheesecake = () => {
   const [quantity, setQuantity] = useState(1);
   const [selectedImage, setSelectedImage] = useState("/src/img/cheesecake.png");
+  const [reviews, setReviews] = useState([]);
+  const { addItemToCart } = useContext(CartContext); // Extrae addItemToCart desde el contexto
 
   const handleQuantityChange = (e) => {
-    setQuantity(e.target.value);
+    setQuantity(Number(e.target.value)); // Asegúrate de convertir a número
   };
 
   const handleImageClick = (imageSrc) => {
-    setSelectedImage(imageSrc);  // Cambiar la imagen principal al hacer clic en una miniatura
+    setSelectedImage(imageSrc);  
+  };
+
+  const handleAddReview = (review) => {
+    setReviews([...reviews, review]); 
+  };
+
+  // Función para agregar el producto al carrito
+  const handleAddToCart = () => {
+    const item = {
+      name: "Cheesecake de fresa",
+      price: 120.00,
+      quantity: quantity,
+      image: selectedImage,
+      size: 'Medium',
+    };
+    console.log("Producto añadido al carrito:", item); // Añade un log para verificar
+    addItemToCart(item); // Añade el producto al carrito
   };
 
   return (
@@ -20,7 +40,6 @@ const Cheesecake = () => {
       <main>
         <section className="product-images">
           <div className="thumbnails">
-            {/* Las miniaturas que cambian la imagen principal al hacer clic */}
             <img 
               src="/src/img/fresa2.png" 
               alt="Cheesecake de maracuyá" 
@@ -43,7 +62,6 @@ const Cheesecake = () => {
             />
           </div>
           
-          {/* Imagen principal que cambia según la miniatura seleccionada */}
           <div className="main-image">
             <img src={selectedImage} alt="Imagen de cheesecake" />
           </div>
@@ -53,9 +71,8 @@ const Cheesecake = () => {
           <h1>Cheesecake de fresa</h1>
           <p>Descripción:</p>
           <p>Nuestro cheesecake de fresa es una delicia suave y cremosa que combina lo mejor de la repostería artesanal. Hecho con los ingredientes más frescos, cada bocado es una experiencia única. La base crujiente de galleta y mantequilla complementa a la perfección el relleno de queso, creando una textura irresistible. Ideal para cualquier ocasión, este cheesecake es la opción perfecta para sorprender a tus invitados o darte un gusto especial.</p>
-          <p>Precio: S/60.00 </p>
+          <p>Precio: S/120.00 </p>
           <p>Categoría: Cheesecake</p>
-
 
           <div className="quantity-control">
             <button onClick={() => setQuantity(quantity > 1 ? quantity - 1 : 1)}>-</button>
@@ -68,14 +85,33 @@ const Cheesecake = () => {
             <button onClick={() => setQuantity(quantity + 1)}>+</button>
           </div>
 
-          <button className="add-to-cart">Añadir al Carrito</button>
+          <button className="add-to-cart" onClick={handleAddToCart}>Añadir al Carrito</button> {/* Añadido onClick */}
         </section>
+
       </main>
+
+      <section className="reviews-section">
+        <h2>Reseñas</h2>
+
+        <Review onSubmitReview={handleAddReview} />
+
+        <div className="reviews-list">
+          {reviews.length > 0 ? (
+            reviews.map((review, index) => (
+              <div key={index} className="review">
+                <p>{review.comment}</p>
+                <p>Puntuación: {review.rating} estrella{review.rating > 1 && 's'}</p>
+              </div>
+            ))
+          ) : (
+            <p>No hay reseñas aún. Sé el primero en comentar.</p>
+          )}
+        </div>
+      </section>
+
       <ProductosRelacionados />
     </div>
-
   );
 };
-//a
 
 export default Cheesecake;

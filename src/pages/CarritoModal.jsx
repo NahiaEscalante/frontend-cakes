@@ -3,7 +3,6 @@ import React, { useEffect, useRef } from 'react';
 const CarritoModal = ({ isOpen, onClose, cartItems }) => {
   const modalRef = useRef();
 
-  // Cerrar el modal si se hace clic fuera de él
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (modalRef.current && !modalRef.current.contains(event.target)) {
