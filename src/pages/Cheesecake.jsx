@@ -1,6 +1,6 @@
-import React, { useState, useContext } from 'react'; // Importa useContext
+import React, { useState, useContext } from 'react'; 
 import '../styles/index.css';
-import { CartContext } from '../context/CartContext'; // Importa CartContext
+import { CartContext } from '../context/CartContext'; 
 import ProductosRelacionados from './ProductosRelacionados';  
 import Review from './Review';
 
@@ -8,10 +8,10 @@ const Cheesecake = () => {
   const [quantity, setQuantity] = useState(1);
   const [selectedImage, setSelectedImage] = useState("/src/img/cheesecake.png");
   const [reviews, setReviews] = useState([]);
-  const { addItemToCart } = useContext(CartContext); // Extrae addItemToCart desde el contexto
+  const { addItemToCart } = useContext(CartContext);
 
   const handleQuantityChange = (e) => {
-    setQuantity(Number(e.target.value)); // Asegúrate de convertir a número
+    setQuantity(Number(e.target.value)); 
   };
 
   const handleImageClick = (imageSrc) => {
@@ -22,7 +22,7 @@ const Cheesecake = () => {
     setReviews([...reviews, review]); 
   };
 
-  // Función para agregar el producto al carrito
+
   const handleAddToCart = () => {
     const item = {
       name: "Cheesecake de fresa",
@@ -31,8 +31,8 @@ const Cheesecake = () => {
       image: selectedImage,
       size: 'Medium',
     };
-    console.log("Producto añadido al carrito:", item); // Añade un log para verificar
-    addItemToCart(item); // Añade el producto al carrito
+    console.log("Producto añadido al carrito:", item); 
+    addItemToCart(item); 
   };
 
   return (

@@ -15,7 +15,7 @@ import { useState } from 'react';
 import { CartProvider } from './context/CartContext';
 
 function App() {
-  const [isModalOpen, setIsModalOpen] = useState(false); // Estado para abrir/cerrar modal
+  const [isModalOpen, setIsModalOpen] = useState(false); 
 
   const toggleModal = () => {
     setIsModalOpen(!isModalOpen);
@@ -25,10 +25,10 @@ function App() {
     <CartProvider>
       <Router>
         <Navbar />
-        <button onClick={toggleModal}>Ver Carrito</button> {/* Botón para abrir el modal */}
+        <button onClick={toggleModal}>Ver Carrito</button> 
         <CarritoModal isOpen={isModalOpen} onClose={toggleModal} />
         <Routes>
-          <Route path="/" exact element={<Home />} /> {/* Cambié component a element */}
+          <Route path="/" exact element={<Home />} /> 
           <Route path="/home" element={<Home />} />
           <Route path="/producto/cheesecake" element={<Cheesecake />} /> 
           <Route path="/producto/galleta" element={<Galleta />} /> 

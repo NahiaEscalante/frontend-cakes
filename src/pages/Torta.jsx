@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import '../styles/index.css';
 import ProductosRelacionados from './ProductosRelacionados';  
-import Slider from 'react-slick'; 
 import Review from './Review';
 
 const Torta = () => {
